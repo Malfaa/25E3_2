@@ -138,7 +138,7 @@ def reorganizar_pedidos():
     print(f"Fila final (Cenário A): {pedidos}.")
   else:
     for i in pedidos:
-      if i == pedido_a_substituir: 
+      if i == pedido_a_substituir:
         indice = pedidos.index(i)
         pedidos[indice] = pedido_urgente
         print(f"Fila final (Cenário B): {pedidos}.")
@@ -149,17 +149,61 @@ reorganizar_pedidos()
 
 
 #%% [markdown]
-# ## Exercício 9
+## EXERCÍCIO 9
 
-print("\n\n=== EXERCÍCIO 9 ===\n")
+print("=== Exercício 9 ===")
 
+produtos_a = ["banana", "maçã"]
+
+produtos_b = ["laranja", "pera"]
+
+produtos_c = ["laranja", "banana", "maçã", "romã"]
+
+def estoque_produtos():
+  estoque_total = produtos_a + produtos_b + produtos_c
+
+  print(estoque_total)
+
+  print(f"Banana: {estoque_total.count('banana')}\n"+
+          f"Maçã: {estoque_total.count('maçã')}\n"+
+          f"Pera: {estoque_total.count('pera')}\n"+
+          f"Laranja: {estoque_total.count('laranja')}\n"+
+          f"Romã: {estoque_total.count('romã')}\n")
+
+estoque_produtos()
 
 
 
 #%% [markdown]
-# ## Exercício 10
+## EXERCÍCIO 10
 
-print("\n\n=== EXERCÍCIO 10 ===\n")
+print("=== Exercício 10 ===")
+
+data_atual = "2025-08-12"
+boletos = ["2025-08-05",  # vencido
+           "2025-08-12",  # vence hoje
+           "2025-08-15",  # ainda válido
+           "2025-08-01",
+           "2025-09-02",
+           "2025-08-20",
+           "2025-08-06",
+           "2025-08-12",]  # vencido
+
+def verificar_boletos():
+  boletos_vencidos = 0
+  for index, boleto in enumerate(boletos):
+    index+=1
+    if boleto < data_atual:
+      print(f"Boleto: {index} | Vencimento: {boleto} | Situação: vencido")
+      boletos_vencidos+=1
+    elif boleto == data_atual:
+      print(f"Boleto: {index} | Vencimento: {boleto} | Situação: vence hoje")
+    else:
+      print(f"Boleto: {index} | Vencimento: {boleto} | Situação: dentro do prazo")
+  print(f"\nTotal de boletos vencidos: {boletos_vencidos}")
+
+verificar_boletos()
+
 
 
 
@@ -170,6 +214,16 @@ print("\n\n=== EXERCÍCIO 11 ===\n")
 
 
 #%% [markdown]
-# ## Exercício 12
+## EXERCÍCIO 12
 
-print("\n\n=== EXERCÍCIO 12 ===\n")
+print("=== Exercício 12 ===")
+
+lista_temperaturas = [28,31,27,35,29]
+
+def verifica_temperatura():
+  for index, temperatura in enumerate(lista_temperaturas):
+    index+=1
+    if temperatura > 30:
+      print(f"Sensor {index} acima do limite")
+
+verifica_temperatura()
